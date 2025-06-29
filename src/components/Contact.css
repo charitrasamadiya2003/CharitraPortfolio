@@ -1,0 +1,117 @@
+/* 🌟 Luxury Contact Section */
+.lux-contact-section {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  color: #f5f5f5;
+  padding: 5rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.lux-contact-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.05) 0%, transparent 30%),
+    radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 0%, transparent 30%);
+  animation: pulse 12s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.8; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.03); }
+}
+
+/* Heading */
+.lux-contact-section h2 {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+/* Form Container */
+.contact-form-wrapper {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Labels */
+.contact-form-wrapper .form-label {
+  font-weight: 600;
+  color: #ddd;
+}
+
+/* Inputs & Textareas */
+.contact-form-wrapper .form-control {
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.contact-form-wrapper .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.contact-form-wrapper .form-control:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid #d4af37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+/* Button */
+.lux-btn {
+  background: #d4af37;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.lux-btn:hover {
+  background: #fff;
+  color: #d4af37;
+  transform: translateY(-2px);
+}
+
+/* Email Link */
+.lux-contact-section a {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.lux-contact-section a:hover {
+  background: #fff;
+  color: #111;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+  .contact-form-wrapper {
+    padding: 1.5rem;
+  }
+
+  .lux-btn {
+    width: 100%;
+  }
+}

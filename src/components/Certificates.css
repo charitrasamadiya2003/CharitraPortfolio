@@ -1,0 +1,98 @@
+/* 🌌 Certificates - Premium Glass + Golden Touch */
+.certificates-section {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  padding: 5rem 2rem;
+  min-height: 100vh;
+  color: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+}
+
+.certificates-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 25% 30%, rgba(255,255,255,0.08) 0%, transparent 25%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 0%, transparent 25%);
+  animation: pulse 12s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.8; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.02); }
+}
+
+/* Heading */
+.certificates-section h2 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: #f5f5f5;
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+/* Glassy Cards */
+.certificate-card {
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.certificate-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(212, 175, 55, 0.15); /* soft gold glow */
+}
+
+/* Text inside cards */
+.certificate-card .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fdfdfd;
+}
+
+.certificate-card .card-subtitle,
+.certificate-card .card-text {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Button Style */
+.certificate-card .btn {
+  margin-top: 10px;
+  background: #d4af37;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.certificate-card .btn:hover {
+  background: #fff;
+  color: #d4af37;
+  transform: translateY(-2px);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 576px) {
+  .certificates-section {
+    padding: 3rem 1rem;
+  }
+
+  .certificate-card .card-title {
+    font-size: 1rem;
+  }
+
+  .certificate-card .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
