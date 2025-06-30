@@ -4,7 +4,7 @@ import './Resume.css';
 import { motion } from 'framer-motion';
 
 const Resume = () => {
-  const resumeFile = '/Resume.pdf'; // Path to the PDF in the public folder
+  const resumeFile = `${import.meta.env.BASE_URL}Resume.pdf`;
 
   const handleViewResume = () => {
     console.log('View Resume button clicked');
@@ -15,7 +15,7 @@ const Resume = () => {
     console.log('Download Resume button clicked');
     const link = document.createElement('a');
     link.href = resumeFile;
-    link.download = 'Charitra_Samadiya_Resume.pdf'; // Change to your name
+    link.download = 'Charitra_Samadiya_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

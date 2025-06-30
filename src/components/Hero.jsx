@@ -11,7 +11,7 @@ const Hero = () => {
     >
       <div>
         <motion.img
-          src="/charitra.png"
+          src={`${import.meta.env.BASE_URL}charitra.png`}
           alt="Charitra Samadiya"
           className="profile-img"
           initial={{ opacity: 0, y: 60 }}

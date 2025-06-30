@@ -4,36 +4,38 @@ import { Card, Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import './Certificates.css';
 
+const base = import.meta.env.BASE_URL;
+
 const certificates = [
   {
     title: 'Frontend Web Development with ReactJS Certificate',
     issuer: 'grras',
     date: '11Sep, 2023',
-    link: '/Certificates/FrontendwithReactcertificate.pdf',
+    link: `${base}Certificates/FrontendwithReactcertificate.pdf`,
   },
   {
     title: 'Full Stack Web Development using MERN',
     issuer: 'grras',
     date: '10Feb, 2024',
-    link: '/Certificates/FullStackcertificate.pdf',
+    link: `${base}Certificates/FullStackcertificate.pdf`,
   },
   {
     title: 'Css Certificate (Basic)',
     issuer: 'HackerRank',
     date: '19Sep, 2024',
-    link: '/Certificates/csscertificate.pdf',
+    link: `${base}Certificates/csscertificate.pdf`,
   },
   {
     title: 'MongoDB Complete Certification Series',
     issuer: 'MongoDB',
     date: '6Oct, 2024',
-    link: '/Certificates/AllMongoDBcertificates.pdf',
+    link: `${base}Certificates/AllMongoDBcertificates.pdf`,
   },
   {
     title: 'ProblemSolving Certificate',
     issuer: 'HackerRank',
     date: '26June 2025',
-    link: '/Certificates/ProblemSolvingcertificate.pdf',
+    link: `${base}Certificates/ProblemSolvingcertificate.pdf`,
   },
 ];
 

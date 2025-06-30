@@ -3,6 +3,8 @@ import './Projects.css';
 import { motion } from 'framer-motion';
 
 const Projects = () => {
+  const folderIcon = `${import.meta.env.BASE_URL}foldericon.png`;
+
   return (
     <section id="projects" className="lux-projects-section">
       <div className="container text-center">
@@ -20,7 +22,7 @@ const Projects = () => {
 
         {/* Folder Card */}
         <motion.a
-          href="https://github.com/charitra-samadiya?tab=repositories"
+          href="https://github.com/charitrasamadiya2003?tab=repositories"
           target="_blank"
           rel="noopener noreferrer"
           className="d-inline-block lux-folder-link"
@@ -31,7 +33,7 @@ const Projects = () => {
         >
           <div className="lux-folder-card shadow p-4 rounded-4">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/715/715676.png"
+              src={folderIcon}
               alt="Projects Folder"
               className="img-fluid"
               style={{ maxWidth: '100px' }}
