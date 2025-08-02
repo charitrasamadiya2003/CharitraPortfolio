@@ -8,13 +8,13 @@ const base = import.meta.env.BASE_URL;
 
 const certificates = [
   {
-    title: 'Frontend Web Development with ReactJS Certificate',
+    title: 'Frontend with ReactJS Certificate',
     issuer: 'grras',
     date: '11Sep, 2023',
     link: `${base}Certificates/FrontendwithReactcertificate.pdf`,
   },
   {
-    title: 'Full Stack Web Development using MERN',
+    title: 'Full Stack Web Dev using MERN',
     issuer: 'grras',
     date: '10Feb, 2024',
     link: `${base}Certificates/FullStackcertificate.pdf`,
@@ -26,7 +26,7 @@ const certificates = [
     link: `${base}Certificates/csscertificate.pdf`,
   },
   {
-    title: 'MongoDB Complete Certification Series',
+    title: 'MongoDB Certification Series',
     issuer: 'MongoDB',
     date: '6Oct, 2024',
     link: `${base}Certificates/AllMongoDBcertificates.pdf`,
@@ -37,6 +37,15 @@ const certificates = [
     date: '26June 2025',
     link: `${base}Certificates/ProblemSolvingcertificate.pdf`,
   },
+
+   {
+    title: 'Node.js Backend Certification',
+    issuer: 'KnowledgeGate',
+    date: '23July 2025',
+    link: `${base}Certificates/Node.jsBackendCertification.pdf`,
+  },
+
+
 ];
 
 const Certificates = () => {
@@ -70,11 +79,13 @@ const Certificates = () => {
               <Card className="certificate-card">
                 <Card.Body>
                   <Card.Title>{cert.title}</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    {cert.issuer}
-                  </Card.Subtitle>
+                <Card.Subtitle className="mb-2">
+  <small><span className="label">Issuer:</span> {cert.issuer}</small>
+</Card.Subtitle>
+
+
                   <Card.Text>
-                    <small>Issued: {cert.date}</small>
+                    <small>Issued on: {cert.date}</small>
                   </Card.Text>
                   <Button
                     variant="primary"

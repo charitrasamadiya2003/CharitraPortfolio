@@ -6,22 +6,41 @@ import { motion } from 'framer-motion';
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
+    setError(false);
+
+    try {
+      const res = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+
+        setTimeout(() => setSubmitted(false), 3000);
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      console.error('Submission failed:', err);
+      setError(true);
+    }
   };
 
   return (
     <section id="contact" className="lux-contact-section">
       <Container>
-        {/* Title */}
         <motion.h2
           className="fw-bold text-center"
           initial={{ opacity: 0, y: 40 }}
@@ -41,6 +60,19 @@ const Contact = () => {
           >
             <Alert variant="success" className="text-center mt-4">
               Your message has been sent successfully!
+            </Alert>
+          </motion.div>
+        )}
+
+        {/* Error Alert */}
+        {error && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Alert variant="danger" className="text-center mt-4">
+              Failed to send message. Please try again later.
             </Alert>
           </motion.div>
         )}
@@ -65,6 +97,7 @@ const Contact = () => {
                 required
               />
             </Form.Group>
+
             <Form.Group className="mb-3" controlId="email">
               <Form.Label>Your Email</Form.Label>
               <Form.Control
@@ -76,6 +109,7 @@ const Contact = () => {
                 required
               />
             </Form.Group>
+
             <Form.Group className="mb-3" controlId="message">
               <Form.Label>Your Message</Form.Label>
               <Form.Control
@@ -88,13 +122,13 @@ const Contact = () => {
                 required
               />
             </Form.Group>
-            <Button variant="golden" type="submit" className="lux-btn">
+
+            <Button type="submit" className="lux-btn">
               Send Message
             </Button>
           </Form>
         </motion.div>
 
-        {/* Email Display */}
         <motion.p
           className="text-center mt-5"
           initial={{ opacity: 0, y: 20 }}
@@ -103,9 +137,7 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <strong>Email me directly at: </strong>
-          <a href="mailto:charitrasamadiya@gmail.com">
-            charitrasamadiya@gmail.com
-          </a>
+          <a href="mailto:charitrasamadiya@gmail.com">charitrasamadiya@gmail.com</a>
         </motion.p>
       </Container>
     </section>

@@ -48,27 +48,34 @@
 
 .certificate-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(212, 175, 55, 0.15); /* soft gold glow */
+  box-shadow: 0 16px 40px rgba(196, 163, 57, 0.15); /* soft gold glow */
 }
 
 /* Text inside cards */
 .certificate-card .card-title {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #fdfdfd;
+  color: #f5f4f4;
 }
 
-.certificate-card .card-subtitle,
+.certificate-card .card-subtitle {
+  font-size: 0.9rem;
+  color: #f5f0f0;
+  margin-top: 0.5rem; /* ✅ Add space below certificate name */
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3); /* Optional for better readability */
+}
+
 .certificate-card .card-text {
   font-size: 0.9rem;
-  color: #ccc;
+  color: #f5f0f0;
 }
+
 
 /* Button Style */
 .certificate-card .btn {
   margin-top: 10px;
   background: #d4af37;
-  color: #000;
+  color: #000000;
   font-weight: 600;
   border: none;
   border-radius: 8px;

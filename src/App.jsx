@@ -34,7 +34,6 @@ function App() {
         <Projects id="projects" />
         <Resume id = "resume" />
         <Certificates id = "certificates"  />
-
         <Contact id="contact" />
       </main>
       <Footer />

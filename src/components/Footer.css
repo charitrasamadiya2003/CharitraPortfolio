@@ -1,10 +1,8 @@
-/* Footer.css - Luxury Glassmorphic Footer */
+/* Footer.css - Optimized Luxury Glassmorphic Footer */
 .luxury-footer {
   background: rgba(20, 20, 30, 0.9);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(8px); /* reduced blur for better performance */
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  z-index: 1;
   overflow: hidden;
 }
 
@@ -12,34 +10,34 @@
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 700;
   letter-spacing: 1px;
-  text-shadow: 0 2px 20px rgba(255, 255, 255, 0.1);
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.1);
 }
 
 .footer-description {
-  font-size: 1.1rem;
-  max-width: 700px;
+  font-size: 1rem;
+  max-width: 680px;
   margin: 0 auto;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* Social Icons */
 .social-icons a {
   color: white;
-  font-size: 1.4rem;
-  width: 44px;
-  height: 44px;
+  font-size: 1.3rem;
+  width: 40px;
+  height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 50%;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
 }
 
 .social-icons a:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.12);
   color: #88d3ce;
 }
 
@@ -47,19 +45,17 @@
 .footer-btn {
   background: transparent;
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 30px;
-  padding: 0.5rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  padding: 0.4rem 1.2rem;
   margin: 0 0.4rem;
   font-weight: 500;
   text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(6px);
+  transition: background 0.3s ease;
 }
 
 .footer-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   color: #6e45e2;
 }
 
@@ -77,5 +73,5 @@
 .footer-copyright {
   color: rgba(255, 255, 255, 0.5);
   margin-top: 0.5rem;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }

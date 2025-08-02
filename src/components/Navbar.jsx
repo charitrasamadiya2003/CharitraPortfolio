@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import './Navbar.css';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import csjIcon from '../assets/CSJlogo.ico';
 
 const CustomNavbar = () => {
   const [expanded, setExpanded] = useState(false);
@@ -15,59 +15,29 @@ const CustomNavbar = () => {
     >
       <Container>
         <Navbar.Brand href="#home" className="d-flex align-items-center gap-2">
-  <img
-    src={csjIcon}
-    alt="CSJ Logo"
-    width="28"
-    height="28"
-    className="d-inline-block align-top"
-    style={{ borderRadius: '5px' }}
-  />
-  Charitra Samadiya
-</Navbar.Brand>
+          <img
+            src="/P.logo.png"
+            alt="Charitra Samadiya Logo"
+            width="28"
+            height="28"
+            className="d-inline-block align-top logo"
+          />
+          Charitra Samadiya
+        </Navbar.Brand>
 
         <Navbar.Toggle 
           aria-controls="basic-navbar-nav" 
-          onClick={() => setExpanded(expanded ? false : true)}
+          onClick={() => setExpanded(!expanded)}
+          aria-label="Toggle navigation"
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link 
-              href="#home" 
-              onClick={() => setExpanded(false)}
-            >
-              Home
-            </Nav.Link>
-            <Nav.Link 
-              href="#about" 
-              onClick={() => setExpanded(false)}
-            >
-              About
-            </Nav.Link>
-            <Nav.Link 
-              href="#projects" 
-              onClick={() => setExpanded(false)}
-            >
-              Projects
-            </Nav.Link>
-            <Nav.Link 
-              href="#resume" 
-              onClick={() => setExpanded(false)}
-            >
-              Resume
-            </Nav.Link>
-            <Nav.Link 
-              href="#certificates" 
-              onClick={() => setExpanded(false)}
-            >
-              Certificates
-            </Nav.Link>
-            <Nav.Link 
-              href="#contact" 
-              onClick={() => setExpanded(false)}
-            >
-              Contact
-            </Nav.Link>
+            <Nav.Link href="#home" onClick={() => setExpanded(false)}>Home</Nav.Link>
+            <Nav.Link href="#about" onClick={() => setExpanded(false)}>About</Nav.Link>
+            <Nav.Link href="#projects" onClick={() => setExpanded(false)}>Projects</Nav.Link>
+            <Nav.Link href="#resume" onClick={() => setExpanded(false)}>Resume</Nav.Link>
+            <Nav.Link href="#certificates" onClick={() => setExpanded(false)}>Certificates</Nav.Link>
+            <Nav.Link href="#contact" onClick={() => setExpanded(false)}>Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
