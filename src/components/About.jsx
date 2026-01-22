@@ -85,6 +85,8 @@ const About = () => {
           <li className="list-inline-item tech-pill">HTML5</li>
           <li className="list-inline-item tech-pill">CSS3</li>
           <li className="list-inline-item tech-pill">Bootstrap</li>
+          <li className="list-inline-item tech-pill">Python</li>
+          <li className="list-inline-item tech-pill">MySql</li>
         </motion.ul>
       </div>
     </section>

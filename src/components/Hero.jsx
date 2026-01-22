@@ -55,11 +55,11 @@ const Hero = () => {
       <link
         rel="preload"
         as="image"
-        href={`${import.meta.env.BASE_URL}charitra.jpg`}
+        href={`${import.meta.env.BASE_URL}`}
       />
       <div>
         <motion.img
-          src={`${import.meta.env.BASE_URL}charitra.jpg`}
+          src={`${import.meta.env.BASE_URL}charitra.png`}
           alt="Charitra Samadiya - Frontend Developer"
           className="profile-img"
           width="180"
